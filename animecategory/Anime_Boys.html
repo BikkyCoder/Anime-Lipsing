@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<style>
+  
+</style>
+<body>
+<header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../About.html">About</a></li>
+                <li><a href="../Blog.html">Blog</a></li>
+                <li><a href="../Dialogues.html">dialogues</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <div class="home_Heading">  
+      
+        <h1> Boy Anime Video Downloader</h1>
+        <h2> Click Downlaod button then download video</h2>
+    </div>
+    <br>
+    <br>
+    
+    
+    <!-- i wnat 6 button of category style -->
+    <div class="category-buttons">
+        <a href="" class="category-btn" data-category="Anime_Boys"><span class="dot"></span>Anime Boys</a>
+        <a href="../animecategory/Anime_Girls.html" class="category-btn" data-category="Anime_Girls"><span class="dot"></span>Anime Girls</a>
+        <a href="../animecategory/Cutes_anime.html" class="category-btn" data-category="Cutes_anime"><span class="dot"></span>Cates Anime</a>
+        <a href="../animecategory/Doges_anime.html" class="category-btn" data-category="Doges_anime"><span class="dot"></span>Doges Anime</a>
+        <a href="../animecategory/Cars_Anime.html" class="category-btn" data-category="Cars_Anime"><span class="dot"></span>Cars Anime</a>
+        <a href="../animecategory/Romantic_Anime.html" class="category-btn" data-category="Romantic_Anime"><span class="dot"></span>Romantic Anime</a>
+        <a href="../animecategory/funny_Anime.html" class="category-btn" data-category="funny_Anime"><span class="dot"></span>funny Anime</a>
+        <a href="../animecategory/Anigry_Anime.html" class="category-btn" data-category="Anigry_Anime"><span class="dot"></span>Anigry Anime</a>
+    </div>
+    
+    
+    
+    <hr>
+    <div id="loader" class="loader-container"><div class="spinner"></div></div>
+    <main id="video-gallery" class="hidden"></main>
+
+    <!-- Video Popup Modal -->
+    <div id="video-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <video id="popup-video" controls autoplay></video>
+        </div>
+    </div>
+    
+
+    <script>
+        
+// Slideshow for .contai_Tow
+document.addEventListener('DOMContentLoaded', function() {
+    const images = [
+        '../images/ai-generated-8524881_1280.jpg',
+        '../images/anime-8937912_1280.png',
+        '../images/woman-8188164.png',
+        '../images/woman-8188165_1920.png',
+        '../images/woman-8188167_1280.png'
+    ];
+    let current = 0;
+    const imgEl = document.getElementById('slideshow-img');
+    if (imgEl) {
+        setInterval(() => {
+            current = (current + 1) % images.length;
+            imgEl.src = images[current];
+        }, 3000); // 5 seconds interval
+    }
+});
+
+document.querySelectorAll('.category-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=> {
+    // single-select behavior:
+    document.querySelectorAll('.category-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // if you want multi-select, comment above two lines and use:
+    // btn.classList.toggle('active');
+  });
+});
+
+
+
+
+
+// Jab poora HTML page load ho jaye, tab yeh function chalega
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Yahan Cloudinary se copy kiye gaye URLs daalein
+    const videos = [
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086471/idllflg5coeedkdobw1t.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086473/kui4kjz9gculuh7z59ok.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086470/j1ppitpii9qlfruzohka.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086494/mpgtixxc0t0rysgyqf2a.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086494/keytjo1yvylce3l3riec.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086494/ym2x0uutmiuwoyte1zb4.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086498/cxwex6oc8g3ziwanng4u.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086512/mfzodictajmbgoznk5bz.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086515/cy1zetvxyixtyw1stvfz.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086518/bt0rgdcrzeyech28g9qc.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086520/qnmko0l30mtly8zotfps.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086521/qmik8unv1yhivdxtvirj.mp4'
+        },
+        {
+            title: '👱‍♂️👱‍♂️👨‍💼👨‍💼',
+            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1755086524/xmxv5kjwkrfkd4g4swad.mp4'
+        },
+        
+    
+    ];
+
+    // HTML se zaroori elements ko select karo
+    const loader = document.getElementById('loader');
+    const gallery = document.getElementById('video-gallery');
+    const popup = document.getElementById('video-popup');
+    const popupVideo = document.getElementById('popup-video');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Function jo saare video cards ko banakar page par dikhayega
+    function renderGallery() {
+        gallery.innerHTML = ''; // Pehle gallery ko khali karo
+        videos.forEach(video => {
+            // Download page par bhejne ke liye URL. Hum poora video URL bhej rahe hain.
+            const downloadPageUrl = `download.html?url=${encodeURIComponent(video.videoUrl)}&title=${encodeURIComponent(video.title)}`;
+
+            const card = document.createElement('div');
+            card.classList.add('video-card');
+
+            card.innerHTML = `
+                <div class="video-wrapper">
+                    <video preload="metadata" muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                        <source src="${video.videoUrl}#t=0.1" type="video/mp4">
+                    </video>
+                </div>
+                <div class="play-overlay">▶</div>
+                <div class="video-info">
+                    <h3>${video.title}</h3>
+                    <a href="${downloadPageUrl}" class="download-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+                        <span>Download</span>
+                    </a>
+                </div>
+            `;
+            gallery.appendChild(card);
+
+            // Poore card par click event lagao
+            card.addEventListener('click', (e) => {
+                // Agar download button par click hua hai, to kuch mat karo
+                if (e.target.classList.contains('download-btn')) {
+                    return;
+                }
+                
+                popupVideo.src = video.videoUrl;
+                popup.classList.add('active'); // Popup ko dikhao
+            });
+        });
+    }
+
+    // Function jo popup ko band karega
+    function closePopup() {
+        popup.classList.remove('active');
+        popupVideo.pause(); // Video ko background mein chalne se roko
+        popupVideo.src = ''; // Video ka source khali kar do
+    }
+
+    closeBtn.addEventListener('click', closePopup);
+    popup.addEventListener('click', (e) => {
+        // Sirf kaale background par click karne se popup band hoga
+        if (e.target === popup) {
+            closePopup();
+        }
+    });
+
+    // Page load hote hi saare cards bana do
+    renderGallery();
+});
+
+    </script>
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Lipsync Videos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="./About.html">About</a></li>
+                <li><a href="./Blog.html">Blog</a></li>
+                <li><a href="./Dialogues.html">dialogues</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <div class="container">
+       <div class="contai_One"> 
+             <!-- my anime website introducing -->
+            <h1>Anime Lipsync Videos</h1>
+            <p>Welcome to the Anime Lipsync Videos page! Here, you can explore a
+            collection of anime videos that have been enhanced with AI-generated lipsync technology. Enjoy the seamless synchronization of audio and video, bringing your favorite anime characters to life like never before!</p>
+            <p>For any inquiries or feedback, feel free to contact us through the <a href="./About.html">About</a> page.</p>
+            <p>Happy watching!</p>
+       </div>
+       <div class="contai_Tow"> 
+            <!-- Slideshow: image changes every 2 seconds -->
+            <img id="slideshow-img" src="./images/ai-generated-8524881_1280.jpg" alt="Anime Image">
+       </div>
+    </div>
+
+    <br>
+    <br>
+    
+    
+    <!-- i wnat button of category style -->
+    <div class="category-buttons">
+        <a href="./animecategory/Anime_Boys.html" class="category-btn" data-category="Anime_Boys"><span class="dot"></span>Anime Boys</a>
+        <a href="./animecategory/Anime_Girls.html" class="category-btn" data-category="Anime_Girls"><span class="dot"></span>Anime Girls</a>
+        <a href="./animecategory/Cutes_anime.html" class="category-btn" data-category="Cutes_anime"><span class="dot"></span>Cates Anime</a>
+        <a href="./animecategory/Doges_anime.html" class="category-btn" data-category="Doges_anime"><span class="dot"></span>Doges Anime</a>
+        <a href="./animecategory/Cars_Anime.html" class="category-btn" data-category="Cars_Anime"><span class="dot"></span>Cars Anime</a>
+        <a href="./animecategory/Romantic_Anime.html" class="category-btn" data-category="Romantic_Anime"><span class="dot"></span>Romantic Anime</a>
+        <a href="./animecategory/funny_Anime.html" class="category-btn" data-category="funny_Anime"><span class="dot"></span>funny Anime</a>
+        <a href="./animecategory/Anigry_Anime.html" class="category-btn" data-category="Anigry_Anime"><span class="dot"></span>Anigry Anime</a>
+    </div>
+    
+    
+    
+    <hr>
+
+    <div id="loader" class="loader-container"><div class="spinner"></div></div>
+    <main id="video-gallery" class="hidden"></main>
+
+    <!-- Video Popup Modal -->
+    <div id="video-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <video id="popup-video" controls autoplay></video>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

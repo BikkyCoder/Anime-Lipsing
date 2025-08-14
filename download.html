@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Video</title>
+    <link rel="stylesheet" href="style.css"> <!-- Purani CSS file hi use karenge -->
+    <style>
+        /* Is page ke liye kuch extra styles */
+        .download-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px 40px;
+            background-color: #ffffff; /* White background */
+            border-radius: 15px; /* Match card radius */
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Match card shadow */
+        }
+        .download-container h2 {
+            color: #2c3e50; /* Match header color */
+            margin-bottom: 25px;
+        }
+        .download-container video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .final-download-btn {
+            display: inline-block;
+            background-color: #007bff; /* Modern blue accent */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .final-download-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="download-container">
+            <h2 id="video-title">Loading...</h2>
+            <video id="download-video-preview" controls autoplay></video>
+            <a id="final-download-btn" class="final-download-btn" href="#" download>Click Here to Download</a>
+        </div>
+    </main>
+    <script src="download.js"></script>
+</body>
+</html>
