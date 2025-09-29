@@ -1,20 +1,57 @@
 
-// Slideshow for .contai_Tow
+// Slideshow functionality
 document.addEventListener('DOMContentLoaded', function() {
     const images = [
         './images/ai-generated-8524881_1280.jpg',
-        'images/anime-8937912_1280.png',
-        'images/woman-8188164.png',
-        'images/woman-8188165_1920.png',
-        'images/woman-8188167_1280.png'
+        './images/anime-8937912_1280.png',
+        './images/woman-8188164.png',
+        './images/woman-8188165_1920.png',
+        './images/woman-8188167_1280.png'
     ];
     let current = 0;
     const imgEl = document.getElementById('slideshow-img');
+    
     if (imgEl) {
-        setInterval(() => {
-            current = (current + 1) % images.length;
-            imgEl.src = images[current];
-        }, 3000); // 5 seconds interval
+        // Preload images
+        images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        // Add fade effect class
+        imgEl.classList.add('fade-effect');
+        
+        // Function to change image with fade effect
+        function changeImage() {
+            imgEl.style.opacity = 0;
+            
+            setTimeout(() => {
+                current = (current + 1) % images.length;
+                imgEl.src = images[current];
+                imgEl.style.opacity = 1;
+            }, 500); // Wait for fade out before changing image
+        }
+
+        let slideshowInterval;
+
+        // Function to start slideshow
+        function startSlideshow() {
+            if (slideshowInterval) clearInterval(slideshowInterval);
+            slideshowInterval = setInterval(changeImage, 5000); // 5 seconds interval
+        }
+
+        // Start the slideshow initially
+        startSlideshow();
+
+        // Error handling
+        imgEl.onerror = function() {
+            console.error('Error loading image:', images[current]);
+            changeImage(); // Skip to next image if current one fails
+        };
+
+        // Pause on hover
+        imgEl.addEventListener('mouseenter', () => clearInterval(slideshowInterval));
+        imgEl.addEventListener('mouseleave', startSlideshow);
     }
 });
 
