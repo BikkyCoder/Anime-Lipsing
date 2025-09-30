@@ -3,30 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cute Anime Videos | Adorable Lip Sync Animations | AnimeLipSync</title>
+    <meta name="description" content="Download adorable and kawaii anime lip sync videos. Perfect for creating cute and heartwarming content.">
+    <meta name="keywords" content="cute anime, kawaii animation, adorable anime videos, lip sync videos, anime download">
     <link rel="stylesheet" href="../style.css">
+    <script src="../js/videoGallery.js" defer></script>
+    <!-- Schema.org markup for videos -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+        "name": "Cute Anime Videos Collection",
+        "description": "Collection of adorable and kawaii anime lip sync videos",
+        "url": "https://animelipsync.com/animecategory/Cutes_anime.html"
+    }
+    </script>
 </head>
-<style>
-  
-</style>
 <body>
-<header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../About.html">About</a></li>
-                <li><a href="../Blog.html">Blog</a></li>
-                <li><a href="../Dialogues.html">dialogues</a></li>
-                
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="../index.html">AnimeLipSync</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../About.html">About</a></li>
+                    <li><a href="../Blog.html">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </header>
-    <br>
-    <br>
-    <div class="home_Heading">  
-      
-        <h1> Cates Anime Video Downloader</h1>
-        <h2> Click Downlaod button then download video</h2>
+
+    <div class="category-page-header">
+        <h1>Cute Anime Videos</h1>
+        <h2>Download adorable anime lip sync videos</h2>
     </div>
     <br>
     <br>
@@ -47,14 +65,16 @@
     
     
     <hr>
-    <div id="loader" class="loader-container"><div class="spinner"></div></div>
+   
     <main id="video-gallery" class="hidden"></main>
+
+    <h1>These videos will take some time to load.....</h1>
 
     <!-- Video Popup Modal -->
     <div id="video-popup" class="popup">
         <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <video id="popup-video" controls autoplay></video>
+            <button class="close-btn" aria-label="Close video">×</button>
+            <video id="popup-video" controls></video>
         </div>
     </div>
     
@@ -100,38 +120,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Yahan Cloudinary se copy kiye gaye URLs daalein
     const videos = [
-        {
-            title: 'Naruto Sad Lipsync',
-            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567993/aogf1i25yxdqqzinpbkd.mp4'
-        },
-        {
-            title: 'Gojo Satoru Attitude',
-            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567993/swime4exdqfpj0vi6p5n.mp4'
-        },
-        {
-            title: 'Luffy Funny Moment',
-            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567992/s7ikgky96w11nu5cinbh.mp4'
-        },
-        {
-            title: 'Luffy Funny Moment',
-            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567991/nllavpaaf6wbr1c1wrmn.mp4'
-        },
-        {
-            title: 'Luffy Funny Moment',
-            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567991/h8juuql2q5jemzhqbjup.mp4'
-        },
-        {
-            title: 'Luffy Funny Moment',
-            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567988/um5gqn9m0qmwgw3qtuff.mp4'
-        },
-        {
-            title: 'Luffy Funny Moment',
-            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567985/wquplamhdnmzs5w7aonk.mp4'
-        },
-        {
-            title: 'Luffy Funny Moment',
-            videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567981/bo16vxygonilmul66lrw.mp4'
-        },
+        // {
+        //     title: 'Naruto Sad Lipsync',
+        //     videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567993/aogf1i25yxdqqzinpbkd.mp4'
+        // },
+        // {
+        //     title: 'Gojo Satoru Attitude',
+        //     videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567993/swime4exdqfpj0vi6p5n.mp4'
+        // },
+        // {
+        //     title: 'Luffy Funny Moment',
+        //     videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567992/s7ikgky96w11nu5cinbh.mp4'
+        // },
+        // {
+        //     title: 'Luffy Funny Moment',
+        //     videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567991/nllavpaaf6wbr1c1wrmn.mp4'
+        // },
+        // {
+        //     title: 'Luffy Funny Moment',
+        //     videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567991/h8juuql2q5jemzhqbjup.mp4'
+        // },
+        // {
+        //     title: 'Luffy Funny Moment',
+        //     videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567988/um5gqn9m0qmwgw3qtuff.mp4'
+        // },
+        // {
+        //     title: 'Luffy Funny Moment',
+        //     videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567985/wquplamhdnmzs5w7aonk.mp4'
+        // },
+        // {
+        //     title: 'Luffy Funny Moment',
+        //     videoUrl: 'https://res.cloudinary.com/df8tfabx0/video/upload/v1754567981/bo16vxygonilmul66lrw.mp4'
+        // },
     
     ];
 
